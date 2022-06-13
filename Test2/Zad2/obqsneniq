@@ -1,0 +1,21 @@
+gcc -E main.c -o main.i
+gcc -S main.i -o main.s
+gcc -c main.s -o main.o
+gcc -E car.c -o car.i
+gcc -S car.i -o car.s
+gcc -c car.s -o car.o
+gcc main.o car.o
+./a.out
+
+Purvo molq da me izvinite che pisha na shliokavica, no prosto ne sum si instaliral bulgarski na Ubuntuto!
+
+1vi etap - Preprocessing - izpulnqvat se predprocesornite direktivi
+2ri etap - Compilation - failut se svejda do asembleren ezik
+3ti etap - Assemble - asemblerniqt fail se pravi v mashinen kod (object fail)
+4ti etap - Linking - linkvat se object failovete do izpulnim exe fail
+
+
+Razlikite pri statichni i dinamichni biblioteki sa:
+Dinamichno svurzanite biblioteki se zarejdat samo vednuj ot operacionnata sistema i vsichki izpulnimi moduli mogat da gi polzvat,
+dokato statichno svurzanite biblioteki trqbva da budat zarejdani ot operacionnata sistema za vseki edin fail, koito gi polzva.
+Sushto taka dinamichnite biblioteki obiknoveno sa po-malki kato razmer(baitove) ot statichnite.
