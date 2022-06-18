@@ -1,15 +1,24 @@
 #include <stdio.h>
+#include <stdint.h>
 
-#define PRINTBIT(mask, bit) (((mask) & ((1) << (bit))) >> (bit))
+#define PRINTBIT(mask, bit) (((mask) & ((1UL) << (bit))) >> (bit))
+
+typedef union real
+{
+    double num;
+    uint64_t bits;
+}real_t;
+
 
 int main()
 {
-    int num;
+    real_t realNum;
     printf("Enter a number: ");
-    scanf("%d", &num);
-    for(int i = 31; i >= 0; i--)
+    scanf("%lf", &(realNum.num));
+    for(int i = 63; i >= 0; i--)
     {
-        printf("%d", PRINTBIT(num, i));
+        printf("%lu", PRINTBIT(realNum.bits, i));
+        //printf("%lu", (realNum.bits & (1UL << i)) >> i);
     }
     putchar('\n');
     return 0;
