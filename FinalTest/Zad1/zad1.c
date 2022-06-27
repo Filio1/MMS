@@ -46,7 +46,7 @@ int main()
     printf("Total weight: %.2lf\n", totalItemsWeight(head));
     node_t* minItem = minPriceItem(head);
     printf("Min price item:\n");
-    printf("%5d ", minItem->item.n);
+    printf("%2d ", minItem->item.n);
     printf("%100s ", minItem->item.description);
     printf("%3.2lf ", minItem->item.weight);
     printf("%3.2lf\n", minItem->item.price);
@@ -92,7 +92,7 @@ double totalItemsWeight(node_t* items)
 void print_list(node_t* list){
     node_t* current = list;
     while (current != NULL){
-        printf("%5hd ", current->item.n);
+        printf("%2hd ", current->item.n);
         printf("%100s ", current->item.description);
         printf("%3.2lf ", current->item.weight);
         printf("%3.2lf\n", current->item.price);
