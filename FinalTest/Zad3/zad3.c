@@ -41,10 +41,10 @@ int main()
         fputc('\n', fp);
     }
     for(int i = 0; i < n; i++){
-        free(rows[i].numbers);
+        pthread_join(threads[i], NULL);
     }
     for(int i = 0; i < n; i++){
-        pthread_join(threads[i], NULL);
+        free(rows[i].numbers);
     }
     free(rows);
     fclose(fp);
